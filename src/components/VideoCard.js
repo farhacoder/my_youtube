@@ -1,6 +1,6 @@
 import React from "react";
 
-function VideoCard({ info }) {
+function VideoCard({ info,loading }) {
   if (!info || !info.snippet || !info.statistics) {
     return <div className="text-center text-gray-500">Loading...</div>;
   }
@@ -16,7 +16,9 @@ function VideoCard({ info }) {
         <p className="text-sm text-gray-500">{channelTitle}</p>
         <p className="text-sm text-gray-600">{parseInt(viewCount).toLocaleString()} views</p>
       </div>
+      {loading && <h1>Loading....</h1>}
     </div>
+
   );
 }
 
